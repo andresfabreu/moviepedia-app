@@ -1,6 +1,11 @@
 # Incoming Movies 2025 App
 
 An Android application built with modern technologies that allows users to check and explore upcoming movies for the year 2025. The app leverages a backend-driven UI for dynamic updates and flexible A/B testing.
+## Screens
+| List | Grid | Detail | Error |
+| -------- | ------- | ------- | ------- |
+| ![Screenshot_1746390380](https://github.com/user-attachments/assets/0065452e-46a1-4904-9189-e84ca76138b3) | ![Screenshot_1746390327](https://github.com/user-attachments/assets/b3eef676-654e-4dbf-b4ca-d01a8bb33d1a) | ![Screenshot_1746390383](https://github.com/user-attachments/assets/112c7cfb-4e39-49f5-a978-a80c2160525f) | ![Screenshot_1746391516](https://github.com/user-attachments/assets/12acaa4c-f535-474e-a440-c9c004272213)
+
 
 ## Features
 - View list of incoming movies for 2025
