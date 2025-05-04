@@ -34,6 +34,7 @@ internal class ServerDrivenUiViewModel(
                         it.copy(
                             isLoading = false,
                             serverDrivenUi = serverDrivenUi,
+                            error = null,
                         )
                     }
                 }
@@ -41,7 +42,8 @@ internal class ServerDrivenUiViewModel(
                     _state.update {
                         it.copy(
                             isLoading = false,
-                            error = error
+                            serverDrivenUi = null,
+                            error = error,
                         )
                     }
                 }

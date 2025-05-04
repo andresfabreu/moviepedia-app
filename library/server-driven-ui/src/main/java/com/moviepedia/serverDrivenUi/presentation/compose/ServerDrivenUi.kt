@@ -66,13 +66,16 @@ fun ServerDrivenUi(
 private fun LoadingState(
     modifier: Modifier = Modifier,
 ) {
-    Box(
-        modifier = modifier
-            .fillMaxSize(),
-    ) {
-        CircularProgressIndicator(
-            modifier = Modifier.align(Alignment.Center),
-        )
+    Scaffold { paddingValues ->
+        Box(
+            modifier = modifier
+                .padding(paddingValues = paddingValues)
+                .fillMaxSize(),
+        ) {
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center),
+            )
+        }
     }
 }
 
@@ -82,31 +85,34 @@ private fun ErrorState(
     error: Throwable,
     onRetry: () -> Unit,
 ) {
-    Column(
-        modifier = modifier
-            .padding(all = 32.dp)
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(
-            modifier = Modifier.fillMaxWidth(),
-            text = "Oops, ocorreu um erro :(\nTente novamente mais tarde.",
-            style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.primary,
-            textAlign = TextAlign.Center,
-        )
-
-        Spacer(modifier = Modifier.height(height = 24.dp))
-
-        Button(onClick = onRetry) {
+    Scaffold { paddingValues ->
+        Column(
+            modifier = modifier
+                .padding(paddingValues = paddingValues)
+                .padding(all = 32.dp)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Center
+        ) {
             Text(
-                modifier = Modifier
-                    .padding(all = 4.dp)
-                    .fillMaxWidth(),
-                text = "Tentar de novo",
+                modifier = Modifier.fillMaxWidth(),
+                text = "Oops, ocorreu um erro :(\nTente novamente mais tarde.",
                 style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.primary,
                 textAlign = TextAlign.Center,
             )
+
+            Spacer(modifier = Modifier.height(height = 24.dp))
+
+            Button(onClick = onRetry) {
+                Text(
+                    modifier = Modifier
+                        .padding(all = 4.dp)
+                        .fillMaxWidth(),
+                    text = "Tentar de novo",
+                    style = MaterialTheme.typography.titleLarge,
+                    textAlign = TextAlign.Center,
+                )
+            }
         }
     }
 }
